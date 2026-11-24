@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+  }
+
+  p {
+    line-height: 1.6;
+  }
+}
+
+/* Background Watermark Utility - strictly positioned in background with low opacity */
+.ghost-watermark {
+  user-select: none;
+  pointer-events: none;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  opacity: 0.03;
+  z-index: 0;
+}
+
+.dark .ghost-watermark {
+  opacity: 0.04;
+}
+
+/* Hollow Outline Text Utility (Montserrat 800) */
+.hollow-stroke {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  color: transparent !important;
+  -webkit-text-stroke: 1.5px #CBCBC6;
+}
+
+.dark .hollow-stroke {
+  -webkit-text-stroke: 1.5px rgba(211, 212, 192, 0.35);
+}
+
+/* Editorial poster hairline grid */
+.poster-hairline {
+  border-color: #D8D8D4;
+}
+.dark .poster-hairline {
+  border-color: rgba(211, 212, 192, 0.2);
+}
+
+/* Micro-animations */
+.tactile-btn {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.tactile-btn:hover {
+  transform: translateY(-2px);
+}
+.tactile-btn:active {
+  transform: translateY(1px);
+}
+
+.tactile-card {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+}
+.tactile-card:hover {
+  transform: translateY(-4px);
+}
